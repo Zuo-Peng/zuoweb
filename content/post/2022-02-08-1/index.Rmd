@@ -1,0 +1,12 @@
+---
+title: 我的
+author: zuo peng
+date: '2022-02-08'
+slug: '1'
+categories: []
+tags: []
+---
+## 我的天呐
+试试公式`$ 520+2x=1314$`
+再来一个
+`\[f(x)=5+7\]`
