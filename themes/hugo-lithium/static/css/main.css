@@ -19,6 +19,7 @@ blockquote{
     margin: 0.8em 0;
 }
 blockquote {
+    font: normal helvetica, sans-serif;
     border-left: 4px solid #ccc;
     padding: 0 15px;
     color: #808080;
