@@ -19,9 +19,9 @@ blockquote{
     margin: 0.8em 0;
 }
 blockquote {
-    border-left: 4px solid #dfe2e5;
+    border-left: 4px solid #3366CC;
     padding: 0 15px;
-    color: #333333;
+    color: #808080;
 }
 blockquote blockquote {
     padding-right: 0;
