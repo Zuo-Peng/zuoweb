@@ -11,22 +11,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on;
 }
+blockquote { margin: 1rem 0px; }
+li blockquote { margin: 1rem 0px; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+blockquote{
+    margin: 0.8em 0;
+}
 blockquote {
-    margin: 0;
+    border-left: 4px solid #3366CC;
+    padding: 0 15px;
+    color: #808080;
+    background-color:#f1f1f1;
 }
-
-blockquote p {
-    padding: 15px;
-    background: #eee;
-    border-radius: 5px;
+blockquote blockquote {
+    padding-right: 0;
 }
-
-blockquote p::before {
-    content: '\201C';
-}
-
-blockquote p::after {
-    content: '\201D';
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
 }
 
 h1,
