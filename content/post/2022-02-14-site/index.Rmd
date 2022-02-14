@@ -62,7 +62,7 @@ WordPress可以直接在宝塔面板上安装，非常方便易用。安装完�
 
 到这里网站的搭建就算基本完成了，框架已经有了。接下来需要进行的是SSL证书的配置，强制跳转HTTPS设置的操作，可以参照视频去做。
 
-视频链接来自于[老郭种树](https://guozh.net/)：[https://youtu.be/Y4gQhXgCHiY](https://www.youtube.com/watch?v=Y4gQhXgCHiY&t=0s)
+视频链接来自于[老郭种树](https://youtu.be/Y4gQhXgCHiY)。
 
 
 
