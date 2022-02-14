@@ -11,6 +11,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on;
 }
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
 
 h1,
 h2,
@@ -33,12 +51,6 @@ img {
   max-width: 100%;
 }
 
-blockquote {
-    border-left: 4px solid #42b983;
-    padding: 10px 0px 10px 15px;
-    color: #777;
-    background-color: rgba(66, 185, 131, .1);
-}
 .wrapper {
   overflow: hidden;
   position: relative;
@@ -329,5 +341,3 @@ blockquote {
     box-shadow: none;
   }
 }
-
- 

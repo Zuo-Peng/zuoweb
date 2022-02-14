@@ -6,15 +6,10 @@ slug: site
 categories: []
 tags: []
 ---
-> "I thoroughly disapprove of duels. If a man should challenge me,
-  I would take him kindly and forgivingly by the hand and lead him
-  to a quiet place and kill him."
->
-> --- Mark Twain
+> huhud
+> swswsw
 
-<blockquote>
-    <p>朝辞白帝彩云间 千里江陵一日还 两岸猿声啼不住 轻舟已过万重山</p>
-</blockquote>
+<blockquote><p><span>大家好，我是Zero Alan，初次见面，请多多关照。</span></p></blockquote>
 
 因为我的个人网站刚刚搭建完成，完成了基本的网站框架，剩下的就是简单的美化（因为我个人比较喜欢简洁）和输出一些文章。
 

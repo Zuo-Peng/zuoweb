@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.1" />
+
+
+<title>关于latex编译环境的设置 - Welcome to my website!</title>
+<meta property="og:title" content="关于latex编译环境的设置 - Welcome to my website!">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/Zuo-Peng/zuoweb">GitHub</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">关于latex编译环境的设置</h1>
+
+    
+    <span class="article-date">2022-02-14</span>
+    
+
+    <div class="article-content">
+      <p>作为一个科学研究者，总免不了写论文，写研究报告，画图等等。尤其是打算长期从事科研的工作者来说是必须掌握的，这就像每个在电脑前办公的人都必须会Office三件套一样。</p>
+<p>那么就遇到一个问题，我们要怎么去编辑那些数学公式，怎么去排版我们的论文，当然word对于我们来说或许已经够用了，但word用起来很复杂，但我们根据期刊编辑要求的那样去排版，这往往会花费我们大量宝贵的时间，甚至会延误我们发论文的时间。这个时候，学会Latex排版就变得尤为重要了。很多期刊，例如Science、nature等等，都会提供文章的latex模板。但这并不是说，审稿人会因为你发来的是latex还是word版影响你文章的通过率。</p>
+<p>我之所以会学习Latex，因为对我来说，我需要做电子笔记。当然也因为我字丑。我认为，一个漂亮的公式呈现在眼前会更让我有读下去的兴趣。</p>
+<p>学习Latex语言并不那么容易，但要上手，却也不难。我用了两天的时间，完成了对Latex编译环境及编辑器的配置，到目前为止已经大功告成了。大部分时间都花在了找资料和试错上，所以为了方便你们，也为了方便我日后查看，我把所有的内容和步骤写在了这篇文章里，你们只需要按照文章里的步骤做，就没有太大的问题。</p>
+<p><strong>值得注意的是，文章里有较多的链接，都是我整理出来的文章，可以按照指导进行查看。</strong></p>
+<h3 id="安装latex环境">安装Latex环境</h3>
+<p>这个步骤相当简单，就像下个软件，然后安装到电脑上一样的。latex的环境有很多，这里推荐texlive，先来解释一下，latex环境是什么，你可以简单地理解为系统，要编译文档，就需要有编译的程序一样。学过Python的同学应该知道，要在电脑上运行Python的代码是需要有Python环境的，你可以使用不同的编辑器，比如pycharm，或者是vscode，但编译环境都是一样的。</p>
+<p>所以，你需要安装latex环境，安装texlive是因为这个版本比较稳定，但文件也比较大，安装比较费时间，大概需要一个小时左右吧，没事，冲杯咖啡慢慢等。</p>
+<p>安装的方法，请参见Github上的一篇指导文档，请按照这篇文章完成latex环境的安装和环境变量的配置，<a href="https://github.com/OsbertWang/install-latex-guide-zh-cn">一份简短的关于 LaTeX 安装的介绍</a>，非常感谢作者的付出。</p>
+<h3 id="latex编辑器的推荐">Latex编辑器的推荐</h3>
+<p>每个人的口味都不一样，我在这里为大家推荐几个比较适合新手且比较流行的编辑器。适合新手的意思并不是比较低级，比较low，相反这些编辑器都比较强大，适合新手代表这些编辑器有很好的自动补全功能，代码高亮功能，以及详细的报错的功能，对于刚开始接触latex语言的新手来说比较方便。当然如果你熟练的话，那就无所谓，相信你用记事本都可以用得飞起。</p>
+<h4 id="texstudio">Texstudio</h4>
+<p>编辑器的话首推<a href="https://www.texstudio.org/">Texstudio</a>，编辑器的界面蛮不错的，而且免费。以下是编辑器界面：</p>
+<p><img src="C:%5CZeroSpace%5CMarkdown%5C2.png" alt=""></p>
+<p>之所以首推他的原因，是因为它真的很好用，代码补全的功能很好用，自带PDF预览器，也可支持外部PDF阅读器，报错功能也是可以的。这也是我在用的编辑器。</p>
+<p>在通过下载安装之后，要进行简单的配置，因为我们主要写的是中文，中文的编译方式最好选择Xelatex的编译方式。我们在菜单栏中找到options，点击，选择configure texstudio，在build栏中，更改default compiler为xelatex，并且你可以更改PDF阅读器，在default viewer中选择。</p>
+<p>OK，所有配置都完成了，你可以直接上手编文章了。</p>
+<h4 id="vscode">vscode</h4>
+<p>vscode是程序员里很流行的编辑器，也许你也经常使用它来编辑代码。我们只要使用插件latex workshop就可以使用它来编辑tex文档，当然你需要配置一下你的vscode，配置的过程相对来讲比较复杂，处于非程序员不太友好，我花了一天的时间配置寻找配置方法然后配置成功了，如果你特别想使用vscode，可以参照这位作者的文章，关于<a href="https://github.com/EthanDeng/vscode-latex">vscode上latex的配置</a>，按照他的做，应该能解决问题。</p>
+<p>在vscode上编辑可以说是最优的，但是对很多人来说不是那么友好，配置起来比较麻烦。</p>
+<h4 id="winedt">winedt</h4>
+<p>这个编辑器的话只支持Windows系统，并且需要购买，在淘宝上的数码荔枝（中国唯一代理商）上可以购买正版软件，学生价格169元，终身使用。你可以试用一个月。</p>
+<p>这个软件还是蛮不错的，除了报错有些许不详细之外，其他功能都很好。尤其是他对外部PDF阅读器的支持很完美，但考虑到它需要收费，并且报错功能的不完善，我就不再使用它了。</p>
+<h3 id="sumatrapdf阅读器的使用">SumatraPDF阅读器的使用</h3>
+<p>不少人都喜欢这款轻量的阅读器，vscode的配置阅读器就是选用了这款阅读器，但我也并没有觉得这款阅读器有哪些特别之处。不过我还是配置了这款阅读器，因为喜欢折腾一下。同样的，这款阅读器在texstudio上和vscode上配置起来比较复杂，这里附上配置的方法，请参照这位作者进行配置，<a href="https://wenda.latexstudio.net/article-5055.html">SumatraPDF 阅读器该怎么设置——以 TeXStudio 和 VS Code 为例</a>。</p>
+<h3 id="结尾">结尾</h3>
+<p>大致在latex的安装和编辑器的配置上要说明的内容就这么多了。但虽然有编辑器了，要学会latex语言还是需要一段时间，这里也推荐一本书，<a href="https://github.com/wuzhouhui/misc/blob/master/LaTeX%E5%85%A5%E9%97%A8%20%E5%88%98%E6%B5%B7%E6%B4%8B.pdf">latex入门-刘海洋</a>。</p>
+<p>好了，就这些了。</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+  </body>
+</html>
+
