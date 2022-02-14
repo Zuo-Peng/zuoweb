@@ -13,9 +13,6 @@ pdf.options(family="GB1")
 
 试试公式`$ 520+2x=1314$` 再来一个 \[f(x)=5+7\]
 
-```{r, echo=FALSE, out.width="50%", out.height="10%", fig.align="center", fig.cap="美女"}
-knitr::include_graphics("images/IMG_2225_Original.jpeg")
-```
 
 如果是行间代码 ` mat=0 ` 
 
@@ -52,7 +49,7 @@ s^2+\int_0^2x^2dx=0
 </p>
 
 <p style="text-indent:-5em;padding-left:5em;">
-悬挂缩进：这是超过一行的段落，第1行未进行缩进，接下来所有行都进行了缩进。缩进的宽度是可以调节的。这里展示的缩进5个汉字宽度的形式。
+悬挂缩进：这是超过一行的段落，第1行未进行缩进，接 $$x^2$$下来所有行都进行了缩进。缩进的宽度是可以调节的。这里展示的缩进5个汉字宽度的形式。
 </p>
 
 <video controls>
