@@ -1,8 +1,10 @@
 ---
 date: "2016-05-05T21:48:51-07:00"
-title: About
+title: About Me
 ---
 
-This is a "hello world" example website for the [**blogdown**](https://github.com/rstudio/blogdown) package. The theme was forked from [@jrutheiser/hugo-lithium-theme](https://github.com/jrutheiser/hugo-lithium-theme) and modified by [Yihui Xie](https://github.com/yihui/hugo-lithium).
+有问题随时欢迎交流。
 
-> 我们就是这样的人
+邮件：zeroalan100871@gmail.com
+
+QQ：1694414512

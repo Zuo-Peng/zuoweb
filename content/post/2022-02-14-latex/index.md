@@ -31,9 +31,7 @@ tags: []
 
 #### Texstudio
 
-编辑器的话首推[Texstudio](https://www.texstudio.org/)，编辑器的界面蛮不错的，而且免费。以下是编辑器界面：
-
-![](C:\ZeroSpace\Markdown\2.png)
+编辑器的话首推[Texstudio](https://www.texstudio.org/)，编辑器的界面蛮不错的，而且免费。
 
 之所以首推他的原因，是因为它真的很好用，代码补全的功能很好用，自带PDF预览器，也可支持外部PDF阅读器，报错功能也是可以的。这也是我在用的编辑器。
 
