@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.1" />
+
+
+<title>Blogdown网站搭建暨新站开站大吉 - Welcome to my website!</title>
+<meta property="og:title" content="Blogdown网站搭建暨新站开站大吉 - Welcome to my website!">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About Me</a></li>
+    
+    <li><a href="https://github.com/Zuo-Peng/zuoweb">GitHub</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">Blogdown网站搭建暨新站开站大吉</h1>
+
+    
+    <span class="article-date">2022-02-15</span>
+    
+
+    <div class="article-content">
+      
+<script src="/2022/02/15/a/index_files/header-attrs/header-attrs.js"></script>
+
+
+<blockquote>
+<p>我网故我在。 —–谢卡尔</p>
+</blockquote>
+<p>首先介绍一下基本情况。在去年的这个时候，我搭建了我人生中的第一个网站，域名是zeroalan.cc，是个动态网站。之所以搭建网站，也是我无意之中看到的一个视频给我的启发，视频里有一句话，就是上面引用的。而那个视频是介绍关于<a href="https://b23.tv/NGR1EXj">Rblogdown</a>的网站搭建方法的。但限于当时的技术有限，只能先搭建了一个动态网站先玩玩看，正好现在一年的服务器和域名都到期了，就购买力新的域名搭建了该静态网站。</p>
+<p>动态网站和静态网站有什么区别，可以自行百度。本网站是基于Rblogdown搭建的标准的静态网站。那么静态网站有什么特点呢？如下：</p>
+<ul>
+<li>操作简单易学</li>
+<li>不需要进行搜索引擎的加速</li>
+<li>文章编写，网站布局等自由度非常高</li>
+<li>网站源码可以存在本地</li>
+<li>非常易于迁移、维护和备份</li>
+</ul>
+<p>那么基于Rblogdown来搭建的网站有什么优点呢？如下：</p>
+<ul>
+<li>支持Rmarkdown文本编辑方式</li>
+<li>支持随时随地的Latex公式展示</li>
+<li>支持代码的运行，尤其是R语言</li>
+<li>写文章，编译，推送一气呵成，方便</li>
+</ul>
+<p><strong>使用Rblogdown来搭建个人博客科研网站无疑是首选。</strong></p>
+<hr />
+<div id="安装" class="section level3">
+<h3>安装</h3>
+<p>blogdown的背景语言是R语言，不过不用担心，搭建网站的过程中并不需要你会R语言。使用R语言最好的平台是Rstudio，如同Texstudio一样，就是一个编辑器。故需要安装以下两样东西：</p>
+<ul>
+<li><a href="https://cran.r-project.org/">R</a>（可以理解为texlive）</li>
+<li><a href="https://www.rstudio.com/">Rstudio</a>（可以理解为TeXstudio)</li>
+</ul>
+<p>上面两样必须要安装，点击链接以后下载安装即可。</p>
+<p>安装完这两个软件之后，打开R，在控制面板中输入以下代码：</p>
+<pre class="r"><code>if(!require(devtools)) install.packages(&#39;devtools&#39;)</code></pre>
+<p>解释：上面的代码表示的是为R安装一个packages，这是一个必要的工具。</p>
+<p>之后再运行一下代码：</p>
+<pre class="r"><code>devtools::install_github(&#39;rstudio/blogdown&#39;)</code></pre>
+<p>解释：上面代码表示从GitHub上抓取安装blogdown包。</p>
+<p>如果你看了上面<a href="https://b23.tv/NGR1EXj">视频</a>的链接之后，应该知道，我们即将搭建的网站是基于Hugo（可以自行百度了解）的，因此使用以下代码安装Hugo：</p>
+<pre class="r"><code>blogdown::install_hugo()</code></pre>
+<p>安装工作结束！</p>
+</div>
+<div id="搭建" class="section level3">
+<h3>搭建</h3>
+<p>本过程建议观看<a href="https://b23.tv/NGR1EXj">视频</a>跟随操作。不多说了，有问题欢迎随时交流。</p>
+</div>
+<div id="发布" class="section level3">
+<h3>发布</h3>
+<p>就如视频里所说的，推荐直接部署在<a href="https://www.netlify.com/">Netlify</a>服务器里，非常之方便，每次更新只需要将你的public文件夹传到服务器里，即可完成部署。并且该服务器非常良心的是完全免费，当然是有收费版的。而且它会给你一个链接，使用该链接可以随时地访问网站内容。</p>
+<p>当然你可以直接购买独特的域名，在Netlify进行DNS，非常之方便。</p>
+</div>
+<div id="结束语" class="section level3">
+<h3>结束语</h3>
+<p>搭建的整个过程参考视频来做是比较好的，用文字来叙述比较不便。上面的过程基本上是视频的内容，也是最为基础的。</p>
+<p>上面的发布，可以采用推送到GitHub上进行部署，原理就是本地文件直接推送到GitHub上，服务器Netlify直接从GitHub上抓取文件部署网站。之后我会写一篇关于这种发布方法的教程。</p>
+<p>另外，要会使用Rmarkdown语言，如此才能更轻松地写博客，可以花点时间学习一下Rmarkdown的基本语法即可。</p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
+

@@ -11,23 +11,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on;
 }
+blockquote { margin: 1rem 0px; }
+li blockquote { margin: 1rem 0px; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+blockquote{
+    margin: 0.8em 0;
+}
 blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
+    border-left: 4px solid #ccc;
+    padding: 0 15px;
+    color: #646464;
+    background-color:#f1f1f1;
 }
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
+blockquote blockquote {
+    padding-right: 0;
 }
-blockquote p {
-  display: inline;
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
 }
 
 h1,
@@ -45,6 +46,7 @@ a {
 
 code {
   background-color: rgba(0, 0, 0, 0.02);
+  font-size: 16px;
 }
 
 img {

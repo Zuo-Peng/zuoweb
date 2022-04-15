@@ -6,7 +6,50 @@
     <description>Recent content on Welcome to my website!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blogdown网站搭建暨新站开站大吉</title>
+      <link>/2022/02/15/a/</link>
+      <pubDate>Tue, 15 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/02/15/a/</guid>
+      <description>   我网故我在。 —–谢卡尔
+ 首先介绍一下基本情况。在去年的这个时候，我搭建了我人生中的第一个网站，域名是zeroalan.cc，是个动态网站。之所以搭建网站，也是我无意之中看到的一个视频给我的启发，视频里有一句话，就是上面引用的。而那个视频是介绍关于Rblogdown的网站搭建方法的。但限于当时的技术有限，只能先搭建了一个动态网站先玩玩看，正好现在一年的服务器和域名都到期了，就购买力新的域名搭建了该静态网站。
+动态网站和静态网站有什么区别，可以自行百度。本网站是基于Rblogdown搭建的标准的静态网站。那么静态网站有什么特点呢？如下：
+ 操作简单易学 不需要进行搜索引擎的加速 文章编写，网站布局等自由度非常高 网站源码可以存在本地 非常易于迁移、维护和备份  那么基于Rblogdown来搭建的网站有什么优点呢？如下：
+ 支持Rmarkdown文本编辑方式 支持随时随地的Latex公式展示 支持代码的运行，尤其是R语言 写文章，编译，推送一气呵成，方便  使用Rblogdown来搭建个人博客科研网站无疑是首选。
+安装 blogdown的背景语言是R语言，不过不用担心，搭建网站的过程中并不需要你会R语言。使用R语言最好的平台是Rstudio，如同Texstudio一样，就是一个编辑器。故需要安装以下两样东西：
+ R（可以理解为texlive） Rstudio（可以理解为TeXstudio)  上面两样必须要安装，点击链接以后下载安装即可。
+安装完这两个软件之后，打开R，在控制面板中输入以下代码：
+if(!require(devtools)) install.packages(&amp;#39;devtools&amp;#39;) 解释：上面的代码表示的是为R安装一个packages，这是一个必要的工具。
+之后再运行一下代码：
+devtools::install_github(&amp;#39;rstudio/blogdown&amp;#39;) 解释：上面代码表示从GitHub上抓取安装blogdown包。
+如果你看了上面视频的链接之后，应该知道，我们即将搭建的网站是基于Hugo（可以自行百度了解）的，因此使用以下代码安装Hugo：
+blogdown::install_hugo() 安装工作结束！
+ 搭建 本过程建议观看视频跟随操作。不多说了，有问题欢迎随时交流。
+ 发布 就如视频里所说的，推荐直接部署在Netlify服务器里，非常之方便，每次更新只需要将你的public文件夹传到服务器里，即可完成部署。并且该服务器非常良心的是完全免费，当然是有收费版的。而且它会给你一个链接，使用该链接可以随时地访问网站内容。
+当然你可以直接购买独特的域名，在Netlify进行DNS，非常之方便。
+ 结束语 搭建的整个过程参考视频来做是比较好的，用文字来叙述比较不便。上面的过程基本上是视频的内容，也是最为基础的。
+上面的发布，可以采用推送到GitHub上进行部署，原理就是本地文件直接推送到GitHub上，服务器Netlify直接从GitHub上抓取文件部署网站。之后我会写一篇关于这种发布方法的教程。
+另外，要会使用Rmarkdown语言，如此才能更轻松地写博客，可以花点时间学习一下Rmarkdown的基本语法即可。
+ </description>
+    </item>
+    
+    <item>
+      <title>Latex语言基础</title>
+      <link>/2022/02/14/latex-learn/</link>
+      <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/02/14/latex-learn/</guid>
+      <description>在学习Latex体系的庞大和定义之多，相对于我们来讲，我们只是把Latex当做一种工具，一种写文章的工具，不需要所有的内容都有所了解，只需要你要用的、经常用的那一块内容熟练掌握就可以。
+抱着这样的心态去学习Latex语言，会轻松很多，就不会觉得好难，并且效率高，不会为之浪费过多不必要的时间。
+所以我推荐的一个Latex学习流程就是，先了解Latex的大致工作原理，再熟悉一下Latex的文章结构，最后边自己编写文章，边学习自己需要的东西。
+以下是极度洁简的一个模板，基本上可以写东西了。
+\documentclass{article} \usepackage{xeCJK} %支持中文的宏包 \title{this is a title} \author{xxx} \usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry} %页面基础设置，页边距 \pagenumbering{roman} %设置页码的编号样式 页面选择 在写latex文档的时候，我们可以选择不同的文档样式，通用的一般为article，通过以下代码设置页面大小与字体。修改字体用fontspec包。
+\documentclass[11pt,a4paper]{article}  字体设置 样式设置 \bf % 罗马族，直立形状，黑体系列 \it % 罗马族，斜体形状，中等粗细系列 \rm % 罗马族，直立形状，中等粗细系列，默认的字体 \sc % 罗马族，小型大写形状，中等粗细 \sf % 无衬线族，直立形状，中等粗细 \sl % 罗马族，slanted的斜体形状，中等粗细系列 \tt % 打字机族，直立形状，中等粗细 \em % 强调字体，它与当前字体同族、同系列，但形状不同 \emph % 用强调字体打印文本，它与当前字体同族、同系列，但形状不同 上面的命令是针对全局的声明命令，要对局部使用{\bf} 语句。
+normalfont % 把字体转换为默认的族、形状和系列 bfseries % 不改变当前字体的族与形状，但转变成bold序列 mdseries % 不改变当前字体的族与形状，但转变成中等粗细medium序列 itshape % 把字体的形状属性改为斜体，但保留族与系列不变 scshape % 把字体的形状属性改为小型大写，但保留族与系列不变 slshape % 把字体的形状属性改为slanted的斜体，但保留族与系列不变 upshape % 把字体的形状属性改为直立，但保留族与系列不变 rmfamily % 使字体保持当前的系列与形状属性，但转变为罗马族 sffamily % 使字体保持当前的系列与形状属性，但转变为无衬线族 ttfamily % 使字体保持当前的系列与形状属性，但转变为打字机族 上面的命令同样也是全局的。</description>
+    </item>
+    
     <item>
       <title>关于latex编译环境的设置</title>
       <link>/2022/02/14/latex/</link>
@@ -22,7 +65,7 @@
 所以，你需要安装latex环境，安装texlive是因为这个版本比较稳定，但文件也比较大，安装比较费时间，大概需要一个小时左右吧，没事，冲杯咖啡慢慢等。
 安装的方法，请参见Github上的一篇指导文档，请按照这篇文章完成latex环境的安装和环境变量的配置，一份简短的关于 LaTeX 安装的介绍，非常感谢作者的付出。
 Latex编辑器的推荐 每个人的口味都不一样，我在这里为大家推荐几个比较适合新手且比较流行的编辑器。适合新手的意思并不是比较低级，比较low，相反这些编辑器都比较强大，适合新手代表这些编辑器有很好的自动补全功能，代码高亮功能，以及详细的报错的功能，对于刚开始接触latex语言的新手来说比较方便。当然如果你熟练的话，那就无所谓，相信你用记事本都可以用得飞起。
-Texstudio 编辑器的话首推Texstudio，编辑器的界面蛮不错的，而且免费。以下是编辑器界面：
+Texstudio 编辑器的话首推Texstudio，编辑器的界面蛮不错的，而且免费。
 之所以首推他的原因，是因为它真的很好用，代码补全的功能很好用，自带PDF预览器，也可支持外部PDF阅读器，报错功能也是可以的。这也是我在用的编辑器。
 在通过下载安装之后，要进行简单的配置，因为我们主要写的是中文，中文的编译方式最好选择Xelatex的编译方式。我们在菜单栏中找到options，点击，选择configure texstudio，在build栏中，更改default compiler为xelatex，并且你可以更改PDF阅读器，在default viewer中选择。
 OK，所有配置都完成了，你可以直接上手编文章了。
@@ -41,8 +84,8 @@ SumatraPDF阅读器的使用 不少人都喜欢这款轻量的阅读器，vscode
       <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/02/14/site/</guid>
-      <description>   huhud swswsw
-   大家好，我是Zero Alan，初次见面，请多多关照。  因为我的个人网站刚刚搭建完成，完成了基本的网站框架，剩下的就是简单的美化（因为我个人比较喜欢简洁）和输出一些文章。
+      <description>   本文是我为前一个网站编写的。
+ 因为我的个人网站刚刚搭建完成，完成了基本的网站框架，剩下的就是简单的美化（因为我个人比较喜欢简洁）和输出一些文章。
 那第一篇文章就是跟大家聊聊我的一些网站搭建的经验，如果自己在搭建网站的过程中有遇到任何的问题，欢迎大家及时在下方评论提出问题，如果我看到的话，一定会第一时间回复的，一起学习，一起进步。
 那在开始之前，我想先说明一下，我的这篇文章是最最初级的，可以说是给一点都不会、一点都没经验的新手看的，并且会比较侧重于搭建前的准备，至于搭建的过程网络上有教学视频，我也会将链接放在文末。
 确定网站的基本形式 首先你要先决定好你要搭建一个什么样形式的网站，最基本的你要知道自己准备搭建静态网站还是动态网站。静态完整具备访问速度快，可以不需要服务器等优点，但不具备动态网站的登录功能以及动态化管理。动态网站是现在比较流行的网站类型。具体区别大家可自行搜索了解。本网站是动态网站。
@@ -60,19 +103,19 @@ SumatraPDF阅读器的使用 不少人都喜欢这款轻量的阅读器，vscode
 yum install -y wget &amp;amp;&amp;amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;amp;&amp;amp; sh install.sh 该命令是在你的云服务器上安装宝塔面板，等待几分钟，会出现宝塔面板的地址，用户名以及密码，这些信息需要保存好。
  安装Wordpress WordPress可以直接在宝塔面板上安装，非常方便易用。安装完成后要注意放行相应端口。
  完结 到这里网站的搭建就算基本完成了，框架已经有了。接下来需要进行的是SSL证书的配置，强制跳转HTTPS设置的操作，可以参照视频去做。
-视频链接来自于老郭种树：https://youtu.be/Y4gQhXgCHiY
+视频链接来自于老郭种树。
  </description>
     </item>
     
     <item>
-      <title>About</title>
+      <title>About Me</title>
       <link>/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.
- 我们就是这样的人
- </description>
+      <description>有问题随时欢迎交流。
+邮件：zeroalan100871@gmail.com
+QQ：1694414512</description>
     </item>
     
   </channel>
