@@ -1,5 +1,5 @@
 ---
-title: Blogdown网站搭建暨新站开站大吉
+title: Blogdown网站搭建
 author: ''
 date: '2022-02-15'
 slug: A

@@ -1,8 +1,8 @@
 ---
-title: 聊聊双拼
+title: 聊聊双拼输入法
 author: ''
 date: '2022-04-16'
-slug: ''
+slug: 'B'
 categories: []
 tags: []
 ---
