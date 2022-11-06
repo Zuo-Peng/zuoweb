@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.1" />
+
+
+<title>CodeBlocks&#43;Fortran配置步骤 - Welcome to my website!</title>
+<meta property="og:title" content="CodeBlocks&#43;Fortran配置步骤 - Welcome to my website!">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About Me</a></li>
+    
+    <li><a href="https://github.com/Zuo-Peng/zuoweb">GitHub</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">CodeBlocks&#43;Fortran配置步骤</h1>
+
+    
+    <span class="article-date">2022-04-30</span>
+    
+
+    <div class="article-content">
+      
+<script src="/2022/04/30/codeblocks-fortran/index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Fortran语言已经是上世纪的产物了，现在越来越多的人都不接触Fortran语言了。但是话说回来，很多数值计算的书和代码都用到了Fortran语言，尤其是比较老的书籍和代码，所以说不懂得Fortran语言是学习路上的一大阻碍。</p>
+<p>本教程主要是完成CodeBlocks+Fortran配置，使得您的电脑能够运行Fortran语言。CodeBlocks想必大家已经很熟悉了，是一款轻量级的IDE，而且是开源的，还是多平台的，能够很好地支持C/C++以及Fortran。CodeBlocks目前的版本的是<a href="https://github.com/HyungJu/code-blocks-mac/releases/download/20.03/CodeBlocks.20.03.for.macOS.dmg">20.23</a>，我用的是Mac系统，目前使用的是<a href="https://mac.filehorse.com/download-code-blocks/download/">17.12</a>的版本，官网对Mac系统目前只有10.XX的版本好像，可以点击我的链接下载两个版本。</p>
+<p>对与Fortran编译器，种类繁多，比较流行的就是我用的gfortran，对Mac系统的用户比较友好。本篇教程是以Mac为示范，对其他系统仍有参考意义。</p>
+<p>第一步，从App Store下载Xcode软件。然后安装命令行工具，打开终端输入：</p>
+<pre><code>xcode-select --install</code></pre>
+<p>第二步，安装Homebrew（这个是什么，可以百度了解一下），打开终端输入：</p>
+<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</code></pre>
+<p>注意，安装速度比较慢的话，建议去搜一下镜像安装链接。
+安装完成后，继续输入以下指令：</p>
+<pre><code>brew update
+brew install gcc</code></pre>
+<p>这是在安装gcc，因为gfortran是包括在gcc里面的。
+安装完成后，可以输入指令</p>
+<pre><code>which gfortran</code></pre>
+<p>如果返回文件地址，则说明安装成功。注意，这个地址后面要用到。</p>
+<p>第三步，配置CodeBlocks。打开CodeBlocks后，新建一个(fortran application) project，打开setting，修改complier，如下</p>
+<p><img src="002.jpg" width="100%" style="display: block; margin: auto;" />
+注意那个地址就是上面提到的。</p>
+<p>第四步，配置终端。输出是在终端，但Mac终端输出的却很奇怪，不是你想要的，你需要做如下修改，打开setting &gt; Environments，把下面的 Terminal to launch console programs修改成图片样子即可。</p>
+<p><img src="001.jpg" width="100%" style="display: block; margin: auto;" /></p>
+<p>如此一来，你就可以畅快地在你的CodeBlocks上运行着Fortran语言啦。</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+
