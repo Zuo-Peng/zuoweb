@@ -6,7 +6,18 @@
     <description>Recent content on Welcome to my website!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>保研经验交流分享会</title>
+      <link>/2022/11/07/%E4%BF%9D%E7%A0%94%E7%BB%8F%E9%AA%8C%E4%BA%A4%E6%B5%81%E5%88%86%E4%BA%AB%E4%BC%9A/</link>
+      <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/11/07/%E4%BF%9D%E7%A0%94%E7%BB%8F%E9%AA%8C%E4%BA%A4%E6%B5%81%E5%88%86%E4%BA%AB%E4%BC%9A/</guid>
+      <description>  一年又一年，时光飞逝。每年保研交流会的开场白都是“很荣幸站在这里，去年我也像你们一样坐在下面听着学长学姐们的分享，一晃今年轮到我站在这里和你们分享”，今年轮到我了。
+我分享的资料有两份Latex模板（提取码：0000），以及一份届届相传的保研资料（提取码：0000）可供参考。那就祝大家保研顺利啦！
+以下是我本次交流会ppt的主要内容: </description>
+    </item>
+    
     <item>
       <title>CodeBlocks&#43;Fortran配置步骤</title>
       <link>/2022/04/30/codeblocks-fortran/</link>
