@@ -6,16 +6,7 @@
     <description>Recent content on Welcome to my website!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>测试</title>
-      <link>/2022/10/18/%E6%B5%8B%E8%AF%95/</link>
-      <pubDate>Tue, 18 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/10/18/%E6%B5%8B%E8%AF%95/</guid>
-      <description>我的一次测试</description>
-    </item>
-    
+    <lastBuildDate>Sat, 30 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CodeBlocks&#43;Fortran配置步骤</title>
       <link>/2022/04/30/codeblocks-fortran/</link>
