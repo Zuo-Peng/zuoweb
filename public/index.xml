@@ -6,7 +6,21 @@
     <description>Recent content on Welcome to my website!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zotero使用bibtex和latex联动</title>
+      <link>/2022/11/21/zotero-bibtex-latex/</link>
+      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/11/21/zotero-bibtex-latex/</guid>
+      <description>首先要在zotero里下载安装Better Bibtex插件，进行简单的配置，稍微对一些地方设置一下就好了，可以直接百度。
+注意我们要利用zotero导出bibtex文件，以此来引用参考文献。
+操作非常简单，你可以在file菜单栏里直接导出整个library，或者选择某个分类的文件夹单独导出即可，导出的类型选择better bibtex，如图：
+可以选择keep updated功能，这样你一更改文献信息就回获得更新。注意你所有的在keep updated的bib文件在设置里可以查得到，如图：
+你可以对其进行管理。
+在编写tex文件时，引用\cite{}或\upcite{}来引用。</description>
+    </item>
+    
     <item>
       <title>保研经验交流分享会</title>
       <link>/2022/11/07/%E4%BF%9D%E7%A0%94%E7%BB%8F%E9%AA%8C%E4%BA%A4%E6%B5%81%E5%88%86%E4%BA%AB%E4%BC%9A/</link>
@@ -14,7 +28,7 @@
       
       <guid>/2022/11/07/%E4%BF%9D%E7%A0%94%E7%BB%8F%E9%AA%8C%E4%BA%A4%E6%B5%81%E5%88%86%E4%BA%AB%E4%BC%9A/</guid>
       <description>  一年又一年，时光飞逝。每年保研交流会的开场白都是“很荣幸站在这里，去年我也像你们一样坐在下面听着学长学姐们的分享，一晃今年轮到我站在这里和你们分享”，今年轮到我了。
-我分享的资料有两份Latex模板（提取码：0000），以及一份届届相传的保研资料（提取码：0000）可供参考。那就祝大家保研顺利啦！
+我分享的资料有两份Latex模板（提取码：0000）（我使用的环境是texlive+texstudio)，以及一份届届相传的保研资料（提取码：0000）可供参考。那就祝大家保研顺利啦！
 以下是我本次交流会ppt的主要内容: </description>
     </item>
     
