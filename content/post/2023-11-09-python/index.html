@@ -1,0 +1,119 @@
+---
+title: 方程组求解---用python实现
+author: ''
+date: '2023-11-09'
+slug: python
+categories: []
+tags: []
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<blockquote>
+<p>理论推导请参考《数值分析》李庆扬</p>
+</blockquote>
+<div id="gauss消去法解方程组" class="section level2">
+<h2>Gauss消去法解方程组</h2>
+<pre class="python"><code>import numpy as np
+
+A = np.array([[0.4096,0.1234,0.3678,0.2943,0.4043],[0.2246,0.3872,0.4015,0.1129,0.1550],
+              [0.3645,0.1920,0.3781,0.0643,0.4240],[0.1784,0.4002,0.2786,0.3927,-0.2557]])
+print(A)
+rows,columns = A.shape
+ans = np.zeros(shape=(rows,1))
+
+for c1 in range(rows-1):
+    for c2 in range(rows-c1-1):
+        if A[c1+c2+1 , c1] != 0:
+            a = A[c1+c2+1 , c1] / A[c1 , c1]
+            A[c1+c2+1:c1+c2+2 , :] = A[c1+c2+1:c1+c2+2 , :] - A[c1:c1+1 , :] * a
+print(A)
+#--------------------代回求解-------------------------
+for i in range(rows):
+    ans[rows-i-1] = A[rows-i-1 , columns-1] / A[rows-i-1 , columns-2-i]
+    A[: , columns-1:columns] = A[: , columns-1:columns] - ans[rows-i-1] * A[: , rows-i-1:rows-i]
+print(ans)</code></pre>
+<p>输出：</p>
+<pre><code>[[ 0.4096  0.1234  0.3678  0.2943  0.4043]
+ [ 0.2246  0.3872  0.4015  0.1129  0.155 ]
+ [ 0.3645  0.192   0.3781  0.0643  0.424 ]
+ [ 0.1784  0.4002  0.2786  0.3927 -0.2557]]
+[[ 4.09600000e-01  1.23400000e-01  3.67800000e-01  2.94300000e-01
+   4.04300000e-01]
+ [-2.77555756e-17  3.19534863e-01  1.99820605e-01 -4.84764160e-02
+  -6.66937988e-02]
+ [ 7.13898500e-18  0.00000000e+00 -5.98156607e-04 -1.85126813e-01
+   8.13706787e-02]
+ [-1.14249713e-15  0.00000000e+00  1.38777878e-17  3.07244855e+01
+  -1.37247573e+01]]
+[[-0.18191778]
+ [-1.66303081]
+ [ 2.21722832]
+ [-0.44670422]]</code></pre>
+</div>
+<div id="列主元素消去法求解方程组" class="section level2">
+<h2>列主元素消去法求解方程组</h2>
+<pre class="python"><code>import numpy as np
+
+A = np.array([[0.4096,0.1234,0.3678,0.2943,0.4043],[0.2246,0.3872,0.4015,0.1129,0.1550],
+              [0.3645,0.1920,0.3781,0.0643,0.4240],[0.1784,0.4002,0.2786,0.3927,-0.2557]])
+np.set_printoptions(precision=9)
+print(A)
+rows,columns = A.shape
+ans = np.zeros(shape=(rows,1))
+
+for c1 in range(rows-1):
+    k = c1
+    for j in range(c1+1 , rows):
+        if A[k,c1] &lt; A[j,c1]:
+            k = j
+    if k != c1:
+        A[[c1 , k]] = A[[k , c1]]
+    for c2 in range(rows-c1-1):
+        if A[c1+c2+1 , c1] != 0:
+            a = A[c1+c2+1 , c1] / A[c1 , c1]
+            A[c1+c2+1] = A[c1+c2+1] - A[c1] * a
+for i in range(rows):
+    ans[rows-i-1] = A[rows-i-1 , columns-1] / A[rows-i-1 , columns-2-i]
+    A[: , columns-1:columns] = A[: , columns-1:columns] - ans[rows-i-1] * A[: , rows-i-1:rows-i]
+print(ans)</code></pre>
+<p>输出：</p>
+<pre><code>[[ 0.4096  0.1234  0.3678  0.2943  0.4043]
+ [ 0.2246  0.3872  0.4015  0.1129  0.155 ]
+ [ 0.3645  0.192   0.3781  0.0643  0.424 ]
+ [ 0.1784  0.4002  0.2786  0.3927 -0.2557]]
+[[-0.181917777]
+ [-1.663030813]
+ [ 2.217228318]
+ [-0.446704219]]</code></pre>
+</div>
+<div id="jacobi迭代法求解方程组" class="section level2">
+<h2>Jacobi迭代法求解方程组</h2>
+<pre class="python"><code>import numpy as np
+
+AB = np.array([[8,-3,2,20],[4,11,-1,33],[6,3,12,36]])
+np.set_printoptions(precision=12)
+rows,columns = AB.shape
+A = AB[: , 0:rows]
+B = AB[: , rows:columns]
+ans1 = np.zeros(shape=(rows,1))
+ans2 = np.zeros(shape=(rows,1))
+a = np.diagonal(A) #取出对角线的元素
+a = a.reshape((3, 1)) #将一维数组转换成二维数组
+A = -1*A
+i, j = np.diag_indices_from(A) #取出对角线元素的坐标索引值
+A[i,j] = 0
+A = A/a
+B = B/a
+err = 1
+while err &gt;= 1.e-10 :
+    ans2 = np.dot(A,ans1) + B
+    err = np.max(np.abs(ans1 - ans2))
+    ans1 = ans2.copy()
+print(ans2)</code></pre>
+<p>输出：</p>
+<pre><code>[[3.000000000013]
+ [2.000000000013]
+ [0.999999999992]]</code></pre>
+</div>

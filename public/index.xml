@@ -6,7 +6,17 @@
     <description>Recent content on Welcome to my website!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>方程组求解---用python实现</title>
+      <link>/2023/11/09/python/</link>
+      <pubDate>Thu, 09 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/2023/11/09/python/</guid>
+      <description>理论推导请参考《数值分析》李庆扬
+ Gauss消去法解方程组 import numpy as np A = np.array([[0.4096,0.1234,0.3678,0.2943,0.4043],[0.2246,0.3872,0.4015,0.1129,0.1550], [0.3645,0.1920,0.3781,0.0643,0.4240],[0.1784,0.4002,0.2786,0.3927,-0.2557]]) print(A) rows,columns = A.shape ans = np.zeros(shape=(rows,1)) for c1 in range(rows-1): for c2 in range(rows-c1-1): if A[c1+c2+1 , c1] != 0: a = A[c1+c2+1 , c1] / A[c1 , c1] A[c1+c2+1:c1+c2+2 , :] = A[c1+c2+1:c1+c2+2 , :] - A[c1:c1+1 , :] * a print(A) #--------------------代回求解------------------------- for i in range(rows): ans[rows-i-1] = A[rows-i-1 , columns-1] / A[rows-i-1 , columns-2-i] A[: , columns-1:columns] = A[: , columns-1:columns] - ans[rows-i-1] * A[: , rows-i-1:rows-i] print(ans) 输出：</description>
+    </item>
+    
     <item>
       <title>Zotero使用bibtex和latex联动</title>
       <link>/2022/11/21/zotero-bibtex-latex/</link>
