@@ -9,6 +9,8 @@ tags: []
 
 > 理论推导请参考《数值分析》李庆扬
 
+> 完整代码放置在[GitHub](https://github.com/Zuo-Peng/zuogit)
+
 ## Gauss消去法解方程组
 
 
