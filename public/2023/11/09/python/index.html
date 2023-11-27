@@ -60,7 +60,7 @@
 
   <article class="article">
     
-    <span class="article-duration">2 min read</span>
+    <span class="article-duration">4 min read</span>
     
 
     <h1 class="article-title">方程组求解---用python实现</h1>
@@ -152,6 +152,39 @@ print(ans)</code></pre>
  [ 2.217228318]
  [-0.446704219]]</code></pre>
 </div>
+<div id="追赶法求解方程组" class="section level2">
+<h2>追赶法求解方程组</h2>
+<pre class="python"><code>#----------矩阵分解----------
+L = np.zeros(shape=(n,n))
+U = np.eye(n)
+b = A[off0_i , off0_j].reshape((n,1))
+c = A[off1_i , off1_j].reshape((n-1,1))
+gama = A[offd1_i , offd1_j].reshape((n-1,1))
+alpha = np.zeros(shape=(n , 1))
+beta = np.zeros(shape=(n-1 , 1))
+L[offd1_i , offd1_j] = A[offd1_i , offd1_j]
+alpha[0 , 0] = b[0 , 0]
+beta[0 , 0] = c[0 , 0] / alpha[0 , 0]
+#注意gama的数组大小不同
+for i in range(1 , n):
+    alpha[i , 0] = b[i , 0] - gama[i-1 , 0] * c[i-1 , 0] / alpha[i-1 , 0]
+    if i != n-1:
+        beta[i , 0] = c[i , 0] / alpha[i , 0]
+L[off0_i , off0_j] = alpha.reshape((n,))
+U[off1_i , off1_j] = beta.reshape((n-1,))
+#可以验证分解是否正确
+print(np.dot(L,U))
+#---------回代求解-----------
+y = np.zeros(shape=(n,1))
+x = np.zeros(shape=(n,1))
+y[0,0] = B[0,0] / alpha[0,0]
+for i in range(1,n):
+    y[i,0] = (B[i,0] - gama[i-1,0] * y[i-1,0]) / alpha[i,0]
+x[n-1 , 0] = y[n-1 , 0]
+for i in range(n-2 , -1 , -1):
+    x[i,0] = y[i,0] - beta[i,0] * x[i+1,0]
+print(x.reshape((10,-1)))</code></pre>
+</div>
 <div id="jacobi迭代法求解方程组" class="section level2">
 <h2>Jacobi迭代法求解方程组</h2>
 <pre class="python"><code>import numpy as np
@@ -180,6 +213,56 @@ print(ans2)</code></pre>
 <pre><code>[[3.000000000013]
  [2.000000000013]
  [0.999999999992]]</code></pre>
+</div>
+<div id="gauss_seidel迭代法求解方程组" class="section level2">
+<h2>Gauss_seidel迭代法求解方程组</h2>
+<pre class="python"><code>def gauss_seidel_iteration_matrix(A):
+    n = len(A)
+    D = np.diag(np.diag(A))
+    L = np.tril(A, k=-1)
+    U = np.triu(A, k=1)
+    D_inv = np.linalg.inv(D)
+    M = np.dot(D_inv, L + U)
+    return M
+
+def spectral_radius(matrix):
+    eigenvalues, _ = np.linalg.eig(matrix)
+    return max(abs(eigenvalues))
+
+def main(A):
+    # 计算 Gauss-Seidel 迭代矩阵
+    iteration_matrix = gauss_seidel_iteration_matrix(A)
+
+    # 计算谱半径
+    radius = spectral_radius(iteration_matrix)
+
+    print(&quot;Gauss-Seidel 迭代矩阵:&quot;)
+    print(iteration_matrix)
+    print(&quot;谱半径:&quot;, radius)
+#----------------计算谱半径---------------------
+if __name__ == &#39;__main__&#39;:
+    main(A)
+#---------------------------------------------
+ans1 = np.zeros(shape=(n,1))
+ans2 = np.zeros(shape=(n,1))
+a = np.diagonal(A).reshape((n, 1)) #取出对角线的元素
+A = -1*A
+i, j = np.diag_indices_from(A) #取出对角线元素的坐标索引值
+A[i,j] = 0
+A = A/a
+B = B/a
+err = 3
+k = 0
+while err &gt;= 1.e-5:
+    ans_tem = ans1.copy()
+    for i in range(n):
+        ans2[i,0] = np.dot(A[i:i+1] , ans1) + B[i,0]
+        ans1[i,0] = ans2[i,0]
+    err = np.max(np.abs(ans_tem - ans2))
+    k = k + 1
+    #print(k) #打印已迭代次数
+x = ans2.reshape((10,-1))
+print(x)</code></pre>
 </div>
 
     </div>
