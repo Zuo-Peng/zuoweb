@@ -1,0 +1,110 @@
+/* Custom Dark Theme for Hugo Lithium */
+
+body {
+    background-color: #282c34; /* Darker gray background */
+    color: #abb2bf; /* Light gray text */
+}
+
+.header {
+    background: #1c1e22; /* Darker header background */
+    border-bottom: 1px solid #33373f; /* Darker border */
+}
+
+.nav-links a {
+    color: #d1d5db; /* Light gray nav links */
+}
+
+.nav-links a:hover {
+    color: #ffffff; /* White nav links on hover */
+}
+
+.content {
+    color: #abb2bf; /* Light gray content text */
+}
+
+h1, h2, h3, h4, h5, h6,
+.article-title,
+.archive-item-link {
+    color: #e6e6e6; /* Lighter headings and titles */
+}
+
+.article-date,
+.archive-item-date {
+    color: #6c757d; /* Muted gray for dates */
+}
+
+.article-content a {
+    color: #61afef; /* A light blue for links, common in dark themes */
+    border-bottom: 2px solid #61afef;
+    box-shadow: inset 0 -2px 0 #61afef;
+}
+
+.article-content a:hover,
+.article-content a:focus {
+    background: #3a3f4b; /* Darker background on link hover */
+    color: #ffffff;
+}
+
+blockquote {
+    border-left: 4px solid #444c56; /* Darker blockquote border */
+    color: #989ea4; /* Lighter blockquote text */
+    background-color: #31353f; /* Darker blockquote background */
+}
+
+code {
+    background-color: #31353f; /* Darker inline code background */
+    color: #d1d5db; /* Lighter inline code text */
+    border: 1px solid #444c56;
+    padding: 0.1em 0.3em;
+}
+
+.highlight pre, pre { /* For code blocks */
+    background-color: #21252b !important; /* Even darker for code blocks, important to override potential inline styles from hugo */
+    color: #abb2bf !important;
+    border: 1px solid #444c56;
+    padding: 1em;
+}
+
+/* Ensure syntax highlighting within code blocks remains readable */
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .nc, .highlight .ne, .highlight .nf, .highlight .nn, .highlight .nt, .highlight .s, .highlight .sr, .highlight .ss, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .vm { /* Keywords, strings, etc. */
+    color: #c678dd !important; /* Purple */
+}
+.highlight .kc, .highlight .nb, .highlight .no, .highlight .nv, .highlight .ow { /* Constants, builtins */
+    color: #d19a66 !important; /* Orange */
+}
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .cp, .highlight .cs { /* Comments */
+    color: #5c6370 !important; /* Gray for comments */
+    font-style: italic;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .il, .highlight .o, .highlight .p { /* Numbers, operators */
+    color: #98c379 !important; /* Green */
+}
+.highlight .g, .highlight .gd, .highlight .ge, .highlight .gh, .highlight .gi, .highlight .go, .highlight .gp, .highlight .gs, .highlight .gt, .highlight .gu, .highlight .err { /* Generic, errors etc. */
+    color: #e06c75 !important; /* Red */
+}
+
+
+.article-content hr {
+    background: #444c56; /* Darker horizontal rule */
+}
+
+.archive-item-link:hover {
+    border-bottom-color: #61afef; /* Light blue border on hover */
+}
+
+.footer {
+    border-top: 1px solid #33373f; /* Add a top border to the footer for separation */
+}
+
+.footer-links {
+    color: #6c757d; /* Muted gray for footer links */
+}
+
+.footer-links a {
+    color: #989ea4; /* Lighter gray for footer links */
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+    color: #61afef; /* Light blue for footer links on hover */
+}
